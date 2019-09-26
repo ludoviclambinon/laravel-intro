@@ -31,11 +31,14 @@
             <li class="nav-item">
                 <a class="nav-link" href="/clients">Voir nos clients</a>
             </li>
-            
-        </ul>
 
+        </ul>
+        @if (session()->has('message'))
+        <div class="alert alert-success" role="alert">
+            {{ session()->get('message') }}
+        </div>
+        @endif
         @yield('content')
     </div>
 </body>
-
 </html>

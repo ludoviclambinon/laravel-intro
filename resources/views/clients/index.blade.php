@@ -2,10 +2,9 @@
 
 @section('content')
 <h1>Clients</h1>
-<a href="/clients/create" class="btn btn-primary my-3">Nouveau client</a>
 <ul>
-    <table class="table">
-        <thead>
+    <table class="table my-3">
+        <thead class="thead-dark">
             <tr>
                 <th scope="col">id</th>
                 <th scope="col">Nom</th>
@@ -25,5 +24,6 @@
         </tbody>
     </table>
 </ul>
+<a href="/clients/create" class="btn btn-primary my-3">Nouveau client</a>
 
 @endsection
