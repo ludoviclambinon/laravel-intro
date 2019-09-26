@@ -23,7 +23,8 @@ class ClientsController extends Controller
 
     public function create() {
         $entreprises = Entreprise::all();
-        return view('clients.create', compact('entreprises'));
+        $client = new Client();
+        return view('clients.create', compact('entreprises', 'client'));
     }
 
     public function store()
@@ -84,6 +85,12 @@ class ClientsController extends Controller
         ]);
         $client->update($data);
         return redirect('clients/' . $client->id);
+    }
+
+    public function destroy(Client $client)
+    {
+        $client->delete();
+        return redirect('clients');
     }
 }
 

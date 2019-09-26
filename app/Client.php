@@ -11,6 +11,9 @@ class Client extends Model
     //Ligne protected à rajouter si on passe à la méthode $data (voir clientcontroller.php)
     /*protected $fillable = ['name', 'email', 'status']; REMPLACE PAR GUARDED*/
     protected $guarded = [];
+    protected $attributes = [
+        'status' => 0 //Inactif par défaut
+    ];
 
     public function scopeStatus($query) {
         return $query->where('status', 1)->get();
@@ -25,10 +28,16 @@ class Client extends Model
     
     public function getStatusAttribute($attributes)
     {
+        return $this->getStatusOptions()[$attributes];
+    }
+
+    public function getStatusOptions()
+    {
         return [
             '0' => 'Inactif',
-            '1' => 'Actif'
-        ][$attributes];
+            '1' => 'Actif',
+            '2' => 'En attente'
+        ];
     }
 }
 

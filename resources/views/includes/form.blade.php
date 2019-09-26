@@ -17,8 +17,10 @@
 </div>
 <div class="form-group">
     <select class="custom-select @error('status') is-invalid @enderror" name="status">
-        <option value="1">Actif</option>
-        <option value="0">Inactif</option>
+    @foreach($client->getStatusOptions() as $key => $value)
+    <option value="{{ $key }}" {{ $client->status == $value ? 'selected' : ''}}>{{ $value }}</option>
+    @endforeach
+        
     </select>
     @error('status')
     <div class="invalid-feedback">
