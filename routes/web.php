@@ -26,7 +26,16 @@ Route::delete('clients/{client}', 'ClientsController@destroy');
 */
 //Toutes les routes sont reprises dans la ligne en dessous
 Route::resource('clients', 'ClientsController');
+//->middleware('auth') à ajouter pour se connecter sans exceptions (voir clientcontroller)
 
 //Contact
 Route::get('contact', 'ContactController@create');
 Route::post('contact', 'ContactController@store');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+//Authentification
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

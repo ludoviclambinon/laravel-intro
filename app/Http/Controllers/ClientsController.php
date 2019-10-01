@@ -8,6 +8,14 @@ use App\Entreprise;
 
 class ClientsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index']); //except(['index']) permet de montrer index sans être connecté
+
+        //Ne pas ajouter la fonction si on passe ->middleware('auth') dans web.php
+    }
+
+
     public function /*list*/index() {
         $clients = Client::all();
         //VOIR APP/PROVIDERS/CLIENT.PHP
