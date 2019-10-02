@@ -12,7 +12,7 @@
 */
 
 Route::view('/', 'welcome');
-Route::view('a-propos', 'a-propos');
+Route::view('a-propos', 'a-propos')->middleware('test'); //Ajout du middleware créé
 
 //Clients
 /*

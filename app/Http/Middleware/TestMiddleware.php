@@ -15,6 +15,10 @@ class TestMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(now()->Format('s') % 2) 
+        {
+            return $next($request);
+        }
+        return response('Vous n\'êtes pas autorisé à visiter la page');
     }
 }
