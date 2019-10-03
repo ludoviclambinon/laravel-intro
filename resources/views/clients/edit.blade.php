@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Editer le profil de {{ $client->name }}</h1>
-<form action="/clients/{{ $client->id }}" method="POST">
+<form action="{{ route('clients.update', ['client' => $client->id]) }}" method="POST">
 @method('PATCH')
 @include('includes.form')
 

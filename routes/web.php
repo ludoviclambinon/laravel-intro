@@ -29,8 +29,8 @@ Route::resource('clients', 'ClientsController');
 //->middleware('auth') à ajouter pour se connecter sans exceptions (voir clientcontroller)
 
 //Contact
-Route::get('contact', 'ContactController@create');
-Route::post('contact', 'ContactController@store');
+Route::get('contact', 'ContactController@create')->name('contact.create');
+Route::post('contact', 'ContactController@store')->name('contact.store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

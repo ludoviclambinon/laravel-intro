@@ -2,6 +2,7 @@
 
 @section('content')
 <h1>Clients</h1>
+<a href="{{ route('clients.create') }}"></a>
 <ul>
     <table class="table my-3">
         <thead class="thead-dark">

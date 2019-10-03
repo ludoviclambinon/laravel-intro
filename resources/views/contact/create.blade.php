@@ -3,7 +3,7 @@
 @section('content')
 <h1>Contactez-nous</h1>
 @if(!session()->has('message'))
-<form action="/contact" method="POST">
+<form action="{{ route('contact.store') }}" method="POST">
     @csrf
     <div class="form-group">
         <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Votre nom"

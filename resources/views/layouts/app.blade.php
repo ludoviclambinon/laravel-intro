@@ -54,13 +54,16 @@
                             <a class="nav-link active" href="/">Accueil</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ action('HomeController@index') }}">Panel</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="/a-propos">A propos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/contact">Contactez-nous</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/clients">Voir nos clients</a>
+                            <a class="nav-link" href="{{ route('clients.index') }}">Voir nos clients</a>
                         </li>
                     </ul>
 
